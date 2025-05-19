@@ -1,0 +1,43 @@
+version: "2"
+linters:
+  default: all
+  disable:
+    - cyclop # We prefer gocognit
+    - depguard
+    - exhaustive
+    - exhaustruct
+    - gocyclo # We prefer gocognit
+    - nonamedreturns
+
+  settings:
+    mnd:
+      ignored-numbers:
+        - 2
+        - 4
+        - 8
+        - 10
+        - 16
+        - 32
+        - 64
+        - 128
+    varnamelen:
+      ignore-decls:
+        - i int
+  exclusions:
+    paths:
+      - "_test.go"
+formatters:
+  enable:
+    - gofumpt
+    - goimports
+  settings:
+    gofumpt:
+      module-path: github.com/willoma/defaults
+      extra-rules: true
+    goimports:
+      local-prefixes:
+        - github.com/willoma/defaults
+issues:
+  max-issues-per-linter: 0
+  max-same-issues: 0
+  uniq-by-line: false
