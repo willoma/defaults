@@ -92,8 +92,8 @@ import (
 	"reflect"
 )
 
-// Initialize unmarshals the tagged defaults and applies them, overwriting existing values.
-func Initialize(target any) error { return apply(target, true) }
+// Set unmarshals the tagged defaults and applies them, overwriting existing values.
+func Set(target any) error { return apply(target, true) }
 
 // Complete unmarshals the tagged defaults and applies them to unset values, leaving non-zero values untouched.
 func Complete(target any) error { return apply(target, false) }
