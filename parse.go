@@ -11,6 +11,10 @@ func parseStruct(target reflect.Value, overwrite bool) (reflect.Value, []error) 
 
 	for i := range target.NumField() {
 		typeField := target.Type().Field(i)
+		if !typeField.IsExported() {
+			continue
+		}
+
 		field := target.Field(i)
 		defaultValue, hasDefault := typeField.Tag.Lookup("default")
 

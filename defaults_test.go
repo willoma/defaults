@@ -41,6 +41,8 @@ type unmarshaltarget struct {
 	X int16         `default:"42"`
 	Y [3]bool       `default:"true,false,true"`
 	Z bool          `default:"t"`
+
+	unexported string
 }
 
 func TestApply(t *testing.T) {

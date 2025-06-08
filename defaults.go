@@ -1,6 +1,7 @@
 /*
 Package defaults provides a parser that extracts default values from the "default" struct tags
 and unmarshals them into the struct.
+Unexported fields are ignored.
 
 The following types, as well as types that derive from them, can be directly parsed:
 
